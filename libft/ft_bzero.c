@@ -6,7 +6,7 @@
 /*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 18:23:11 by waddam            #+#    #+#             */
-/*   Updated: 2018/11/23 18:49:53 by waddam           ###   ########.fr       */
+/*   Updated: 2019/04/24 21:22:18 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,5 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char	*temp;
 
 	temp = (unsigned char *)s;
-	while (n > 0)
-	{
-		*temp = '\0';
-		temp++;
-		n--;
-	}
+	ft_memset(s, 0, n);
 }
