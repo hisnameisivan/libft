@@ -6,12 +6,13 @@
 #    By: waddam <waddam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/05 23:39:26 by waddam            #+#    #+#              #
-#    Updated: 2018/12/19 02:03:13 by waddam           ###   ########.fr        #
+#    Updated: 2019/11/07 00:47:44 by waddam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 SRC = ft_atoi.c\
+	  ft_atoill.c\
 	  ft_bzero.c\
 	  ft_isalnum.c\
 	  ft_isalpha.c\

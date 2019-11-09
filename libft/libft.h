@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:37:31 by waddam            #+#    #+#             */
-/*   Updated: 2018/12/21 18:43:35 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/07 01:46:36 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <string.h>
+
+# define FT_LONG_MAX 9223372036854775807
 
 typedef struct		s_list
 {
@@ -85,5 +87,6 @@ void				ft_lstprint(t_list *lst);
 void				ft_lstaddb(t_list **alst, t_list *new);
 size_t				ft_lstlen(t_list *lst);
 void				ft_swapchar(char **s1, char **s2);
+int					ft_atoill(const char *str);
 
 #endif
