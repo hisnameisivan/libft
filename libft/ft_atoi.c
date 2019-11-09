@@ -6,9 +6,11 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 10:36:25 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/09 23:10:49 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/10 00:17:06 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int		ft_atoi(const char *str)
 {
@@ -29,9 +31,9 @@ int		ft_atoi(const char *str)
 	while (*str >= '0' && *str <= '9')
 	{
 		result = result * 10 + (*str - '0');
-		if (result > 9223372036854775807 && sign == 1)
+		if (result > FT_LONG_MAX && sign == 1)
 			return (-1);
-		if (result > 9223372036854775808ull && sign == -1)
+		if (result > FT_LONG_MAX + 1 && sign == -1)
 			return (0);
 		str++;
 	}
