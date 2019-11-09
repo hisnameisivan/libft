@@ -6,8 +6,6 @@ void	test_ft_atoill();
 
 int		main(void)
 {
-	printf("%#x\n%#X\n",25, 25);
-	return (0);
 	test_ft_atoi();
 	test_ft_atoill();
 	return (0);
