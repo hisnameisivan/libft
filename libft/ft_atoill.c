@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/05 10:36:25 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/09 23:44:19 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/12 00:15:42 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ int			ft_atoill(const char *str)
 	unsigned long long	res;
 	unsigned long long	temp;
 
+	if (str == NULL)
+		return (0);
 	res = 0;
 	sign = ft_pre_atoi(&str);
 	while (*str >= '0' && *str <= '9')
