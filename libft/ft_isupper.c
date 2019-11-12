@@ -6,11 +6,11 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 23:53:58 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/12 23:56:12 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/13 00:50:22 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isupper(char c)
+int		ft_isupper(char c)
 {
 	return ((c >= 'A' && c <= 'Z') ? 1 : 0);
 }
