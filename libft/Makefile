@@ -6,20 +6,21 @@
 #    By: waddam <waddam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/05 23:39:26 by waddam            #+#    #+#              #
-#    Updated: 2019/11/11 23:13:56 by waddam           ###   ########.fr        #
+#    Updated: 2019/11/13 00:03:12 by waddam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 SRC = ft_atoi.c\
 	  ft_atoi_base.c\
-	  ft_atoill.c\
 	  ft_bzero.c\
 	  ft_isalnum.c\
 	  ft_isalpha.c\
 	  ft_isascii.c\
 	  ft_isdigit.c\
+	  ft_islower.c\
 	  ft_isprint.c\
+	  ft_isupper.c\
 	  ft_itoa.c\
 	  ft_lstadd.c\
 	  ft_lstdel.c\

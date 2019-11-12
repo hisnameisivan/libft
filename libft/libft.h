@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:37:31 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/12 01:24:59 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/13 00:00:38 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,17 @@ void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+
+/*
+** Bonus
+*/
+
 void				ft_lstprint(t_list *lst);
 void				ft_lstaddb(t_list **alst, t_list *new);
 size_t				ft_lstlen(t_list *lst);
 void				ft_swapchar(char **s1, char **s2);
-int					ft_atoill(const char *str);
 int					ft_atoi_base(const char *str, int base);
+int					ft_islower(char c);
+int					ft_isupper(char c);
 
 #endif
