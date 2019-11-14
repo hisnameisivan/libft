@@ -6,9 +6,13 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 23:58:07 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/13 00:32:57 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/14 23:55:14 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** The implementation of the function atoi for base >= 2 and <= 16
+*/
 
 #include "libft.h"
 
