@@ -6,11 +6,13 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 23:56:19 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/13 00:50:25 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/14 23:50:26 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int		ft_islower(char c)
+int		ft_islower(int c)
 {
-	return ((c >= 'a' && c <= 'z') ? 1 : 0);
+	if (c >= 'a' && c <= 'z')
+		return (1);
+	return (0);
 }
