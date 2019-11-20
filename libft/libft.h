@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:37:31 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/13 00:00:38 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/21 00:39:08 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_lstprint(t_list *lst);
 void				ft_lstaddb(t_list **alst, t_list *new);
 size_t				ft_lstlen(t_list *lst);
+void				ft_contentdel(void *content, size_t size);
 void				ft_swapchar(char **s1, char **s2);
 int					ft_atoi_base(const char *str, int base);
 int					ft_islower(char c);

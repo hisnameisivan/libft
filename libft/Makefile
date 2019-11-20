@@ -6,7 +6,7 @@
 #    By: waddam <waddam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/05 23:39:26 by waddam            #+#    #+#              #
-#    Updated: 2019/11/13 00:03:12 by waddam           ###   ########.fr        #
+#    Updated: 2019/11/20 23:54:32 by waddam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC = ft_atoi.c\
 	  ft_isupper.c\
 	  ft_itoa.c\
 	  ft_lstadd.c\
+	  ft_lstaddb.c\
 	  ft_lstdel.c\
 	  ft_lstdelone.c\
 	  ft_lstiter.c\
@@ -76,7 +77,7 @@ SRC = ft_atoi.c\
 all: $(NAME)
 
 $(NAME):
-	gcc -Wall -Wextra -Werror -c $(SRC)
+	gcc -Wall -Wextra -Werror -O2 -c $(SRC)
 	ar rc $(NAME) *.o
 
 clean:
