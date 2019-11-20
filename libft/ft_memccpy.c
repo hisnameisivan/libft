@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memccpy.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 19:05:55 by waddam            #+#    #+#             */
-/*   Updated: 2018/12/09 19:15:04 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/21 01:13:56 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	{
 		temp_d[i] = temp_s[i];
 		if (temp_d[i] == (unsigned char)c)
-		{
 			return (&temp_d[i + 1]);
-		}
 		i++;
 	}
 	return (NULL);

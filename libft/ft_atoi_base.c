@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/09 23:58:07 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/14 23:55:14 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/20 22:11:06 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ int							ft_atoi_base(const char *str, int base)
 	limit = FT_LONG_MAX / 10;
 	if (base < 2 || base > 16 || str == NULL)
 		return (0);
-	result = 0;
 	sign = ft_pre_atoi(&str, base);
 	while ((*str >= '0' && *str <= '9')
 	|| (*str >= 'a' && *str <= 'f') || (*str >= 'A' && *str <= 'F'))
