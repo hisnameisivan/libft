@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 00:13:02 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/22 00:30:38 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/22 00:33:22 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	{
 		temp->content = NULL;
 		temp->content_size = 0;
+		temp->next = NULL;
 	}
 	else
 	{
