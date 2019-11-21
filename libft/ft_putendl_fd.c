@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 02:36:51 by waddam            #+#    #+#             */
-/*   Updated: 2018/12/19 15:06:25 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/21 23:30:46 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,14 @@
 
 void	ft_putendl_fd(char const *s, int fd)
 {
+	size_t	i;
+
 	if (s)
 	{
-		while (*s)
-		{
-			ft_putchar_fd(*s, fd);
-			s++;
-		}
-		ft_putchar_fd('\n', fd);
+		i = 0;
+		while (*(s + i))
+			i++;
+		write(fd, s, i);
+		write(fd, "\n", 1);
 	}
 }
