@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 00:13:02 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/22 00:33:22 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/22 01:14:35 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ t_list	*ft_lstnew(void const *content, size_t content_size)
 	}
 	else
 	{
-		if (!(temp->content = (void *)malloc(sizeof(content) * content_size)))
+		if (!(temp->content = malloc(content_size)))
 		{
 			free(temp);
 			return (NULL);
