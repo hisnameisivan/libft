@@ -3,26 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 00:02:34 by waddam            #+#    #+#             */
-/*   Updated: 2018/12/10 00:47:08 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/21 23:57:27 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-
 void	ft_strclr(char *s)
 {
-	char	*temp;
-
 	if (s)
 	{
-		temp = s;
-		while (*temp)
+		while (*s)
 		{
-			*temp = '\0';
-			temp++;
+			*s = '\0';
+			s++;
 		}
 	}
 }
