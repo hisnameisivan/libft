@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 12:37:56 by waddam            #+#    #+#             */
-/*   Updated: 2018/12/09 19:18:03 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/22 00:25:02 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,5 @@ char	*ft_strcpy(char *dst, const char *src)
 		i++;
 	}
 	dst[i] = '\0';
-	if (ft_strlen(dst) > ft_strlen(src))
-	{
-		while (i < ft_strlen(dst))
-		{
-			dst[i] = '\0';
-			i++;
-		}
-	}
 	return (dst);
 }
