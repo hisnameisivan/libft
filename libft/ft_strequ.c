@@ -6,11 +6,11 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 22:37:52 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/22 00:52:10 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/23 00:56:08 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int			ft_strequ(char const *s1, char const *s2)
+int		ft_strequ(char const *s1, char const *s2)
 {
 	if (s1 && s2)
 	{
