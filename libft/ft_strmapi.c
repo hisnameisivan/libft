@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 22:05:04 by waddam            #+#    #+#             */
-/*   Updated: 2018/12/21 06:21:06 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/23 00:25:27 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (s && f)
 	{
-		len = ft_strlen(s);
+		len = 0;
+		while (*(s + len))
+			len++;
 		if (!(temp = (char *)malloc(sizeof(char) * (len + 1))))
 			return (NULL);
 		i = 0;
