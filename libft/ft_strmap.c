@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/10 18:18:37 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/23 03:12:53 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/23 19:22:47 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,5 @@ char	*ft_strmap(char const *s, char (*f)(char))
 		result[i] = '\0';
 		return (result);
 	}
-	else
-		return (NULL);
+	return (NULL);
 }
