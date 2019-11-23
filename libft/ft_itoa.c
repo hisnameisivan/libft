@@ -6,13 +6,13 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 20:06:16 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/14 23:54:04 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/23 02:56:02 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count(int count, unsigned int temp)
+static int	ft_count_digits(int count, unsigned int temp)
 {
 	while (temp > 9)
 	{
@@ -22,7 +22,7 @@ static int	ft_count(int count, unsigned int temp)
 	return (count);
 }
 
-static char	*ft_allocate(int count, unsigned int temp, char sign)
+static char	*ft_num_record(int count, unsigned int temp, char sign)
 {
 	char	*str;
 
@@ -57,6 +57,6 @@ char		*ft_itoa(int n)
 	}
 	else
 		temp = n;
-	count = ft_count(count, temp);
-	return (ft_allocate(count, temp, sign));
+	count = ft_count_digits(count, temp);
+	return (ft_num_record(count, temp, sign));
 }

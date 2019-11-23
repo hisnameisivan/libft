@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 12:10:24 by waddam            #+#    #+#             */
-/*   Updated: 2018/12/09 14:03:22 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/23 01:28:20 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strrchr(const char *s, int c)
 	temp--;
 	while (len > 0)
 	{
-		if (c == *temp)
+		if (*temp == c)
 			return (temp);
 		len--;
 		temp--;

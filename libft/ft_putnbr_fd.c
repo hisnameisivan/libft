@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/17 03:00:42 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/21 23:44:53 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/23 02:57:43 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	temp;
+	char	digit;
 
 	if (n == -2147483648)
 		write(fd, "-2147483648", 11);
@@ -25,8 +25,8 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	else if (n < 10)
 	{
-		temp = n + '0';
-		write(fd, &temp, 1);
+		digit = n + '0';
+		write(fd, &digit, 1);
 	}
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/11 01:27:56 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/22 23:20:44 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/23 03:12:26 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	*temp;
+	char	*result;
 	size_t	i;
 	size_t	len_s1;
 	size_t	len_s2;
 
-	temp = NULL;
+	result = NULL;
 	i = -1;
 	len_s1 = 0;
 	len_s2 = 0;
@@ -30,12 +30,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		while (s2[len_s2] != '\0')
 			len_s2++;
 	if ((len_s1 + len_s2) == 0
-	|| !(temp = (char *)malloc(sizeof(char) * (len_s1 + len_s2 + 1))))
+	|| !(result = (char *)malloc(sizeof(char) * (len_s1 + len_s2 + 1))))
 		return (NULL);
 	while (len_s1-- > 0)
-		*(temp + ++i) = *s1++;
+		*(result + ++i) = *s1++;
 	while (len_s2-- > 0)
-		*(temp + ++i) = *s2++;
-	*(temp + ++i) = '\0';
-	return (temp);
+		*(result + ++i) = *s2++;
+	*(result + ++i) = '\0';
+	return (result);
 }
