@@ -3,21 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/15 13:41:19 by waddam            #+#    #+#             */
-/*   Updated: 2018/12/16 18:49:59 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/23 04:10:21 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int		ft_delimiter(char a, char c)
-{
-	return (a == c ? 1 : 0);
-}
-
-static size_t	ft_words(char *s, char c)
+static size_t	ft_count_words(char const *s, char c)
 {
 	int		flag;
 	size_t	words;
@@ -26,7 +21,7 @@ static size_t	ft_words(char *s, char c)
 	words = 0;
 	while (*s)
 	{
-		if (ft_delimiter(*s, c) == 1)
+		if (*s == c)
 		{
 			flag = 0;
 			s++;
@@ -42,12 +37,12 @@ static size_t	ft_words(char *s, char c)
 	return (words);
 }
 
-static size_t	ft_characters(char *s, char c)
+static size_t	ft_count_chars(char const *s, char c)
 {
 	size_t	len;
 
 	len = 0;
-	while ((ft_delimiter(*s, c) == 0) && *s)
+	while (*s != c && *s)
 	{
 		len++;
 		s++;
@@ -55,7 +50,7 @@ static size_t	ft_characters(char *s, char c)
 	return (len);
 }
 
-static int		ft_allocate(size_t j, char **array, size_t len)
+static int		ft_allocate_memory(size_t j, char **array, size_t len)
 {
 	if (!(array[j] = (char *)malloc(sizeof(char) * (len + 1))))
 	{
@@ -73,31 +68,45 @@ static int		ft_allocate(size_t j, char **array, size_t len)
 		return (1);
 }
 
-char			**ft_strsplit(char const *s, char c)
+static int		ft_words_record(size_t words, char **result, char const *s,
+																		char c)
 {
-	char	**array;
-	char	*temp;
 	size_t	i;
 	size_t	j;
+	size_t	chars;
+
+	i = 0;
+	j = 0;
+	while (j < words)
+	{
+		while (s[i] == c)
+			i++;
+		chars = ft_count_chars(&s[i], c);
+		if (!(ft_allocate_memory(j, result, chars)))
+			return (0);
+		ft_strncpy(result[j], &s[i], chars);
+		result[j][chars] = '\0';
+		i += chars;
+		j++;
+	}
+	return (1);
+}
+
+char			**ft_strsplit(char const *s, char c)
+{
+	char	**result;
+	size_t	words;
 
 	if (s == NULL)
 		return (NULL);
-	temp = (char *)s;
-	i = 0;
-	j = 0;
-	if (!(array = (char **)malloc(sizeof(char *) * (ft_words(temp, c) + 1))))
+	words = ft_count_words(s, c);
+	if (!(result = (char **)malloc(sizeof(char *) * (words + 1))))
 		return (NULL);
-	while (j < ft_words(temp, c))
+	if (!ft_words_record(words, result, s, c))
 	{
-		while (ft_delimiter(temp[i], c) == 1)
-			i++;
-		if (!(ft_allocate(j, array, ft_characters(&temp[i], c))))
-			return (NULL);
-		ft_strncpy(array[j], &temp[i], ft_characters(&temp[i], c));
-		array[j][ft_characters(&temp[i], c)] = '\0';
-		i += ft_characters(&temp[i], c);
-		j++;
+		free(result);
+		return (NULL);
 	}
-	array[j] = NULL;
-	return (array);
+	result[words] = NULL;
+	return (result);
 }
