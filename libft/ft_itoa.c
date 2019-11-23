@@ -6,23 +6,23 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/16 20:06:16 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/23 02:56:02 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/23 04:14:43 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_count_digits(int count, unsigned int temp)
+static int	ft_count_digits(int count, unsigned int num)
 {
-	while (temp > 9)
+	while (num > 9)
 	{
-		temp = temp / 10;
+		num = num / 10;
 		count++;
 	}
 	return (count);
 }
 
-static char	*ft_num_record(int count, unsigned int temp, char sign)
+static char	*ft_num_record(int count, unsigned int num, char sign)
 {
 	char	*str;
 
@@ -31,8 +31,8 @@ static char	*ft_num_record(int count, unsigned int temp, char sign)
 	str[count] = '\0';
 	while (count > 0)
 	{
-		str[count - 1] = (temp % 10) + '0';
-		temp = temp / 10;
+		str[count - 1] = (num % 10) + '0';
+		num = num / 10;
 		count--;
 	}
 	if (sign == '-')

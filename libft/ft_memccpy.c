@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/28 19:05:55 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/21 01:13:56 by waddam           ###   ########.fr       */
+/*   Updated: 2019/11/23 04:15:51 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	unsigned char	*temp_s;
 
 	i = 0;
-	temp_d = dst;
+	temp_d = (unsigned char *)dst;
 	temp_s = (unsigned char *)src;
 	while (i < n)
 	{
