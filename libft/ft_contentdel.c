@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_contentdel.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/20 22:24:15 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/21 00:38:41 by waddam           ###   ########.fr       */
+/*   Updated: 2019/12/04 00:06:49 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
-** Free memory after overwriting
+** Free memory after overwriting (for ft_lstdel)
 */
 
 #include "libft.h"
