@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:37:31 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/21 00:39:08 by waddam           ###   ########.fr       */
+/*   Updated: 2019/12/04 00:00:41 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,20 +78,28 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
+
+/*
+** Bonus part one
+*/
+
 t_list				*ft_lstnew(void const *content, size_t content_size);
 void				ft_lstdelone(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
+t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 /*
-** Bonus
+** Bonus part two
 */
 
 void				ft_lstprint(t_list *lst);
 void				ft_lstaddb(t_list **alst, t_list *new);
 size_t				ft_lstlen(t_list *lst);
+void				ft_lstdestroy(t_list **alst);
 void				ft_contentdel(void *content, size_t size);
+t_list				*ft_lstmod(t_list *elem);
 void				ft_swapchar(char **s1, char **s2);
 int					ft_atoi_base(const char *str, int base);
 int					ft_islower(char c);

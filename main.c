@@ -16,6 +16,7 @@
 
 // void	test_ft_lstadd();
 // void	test_ft_lstdel();
+void	test_ft_lstmap();
 
 /*
 ** Bonus (my)
@@ -23,6 +24,7 @@
 
 // void	test_ft_atoi_base();
 // void	test_ft_lstaddb();
+// void	test_ft_lstdestroy();
 
 /*
 ** Del
@@ -32,10 +34,6 @@
 
 int		main(void)
 {
-
-	char *s;
-
-	s = ft_memalloc(42);
 	/*
 	** Basic
 	*/
@@ -49,7 +47,7 @@ int		main(void)
 
 	// test_ft_lstadd();
 	// test_ft_lstdel();
-
+	test_ft_lstmap();
 
 	/*
 	** Bonus (my)
@@ -57,6 +55,7 @@ int		main(void)
 
 	// test_ft_atoi_base();
 	// test_ft_lstaddb();
+	// test_ft_lstdestroy();
 
 	/*
 	** Del
@@ -169,6 +168,62 @@ int		main(void)
 // 	printf("\nft_lstdel OK\n\n");
 // }
 
+void	test_ft_lstmap()
+{
+	t_list	lst1;
+	t_list	lst2;
+	t_list	lst3;
+	t_list	lst4;
+
+	t_list	*new;
+	t_list	*print;
+
+	lst1.next = &lst2;
+	lst1.content = (void *)ft_strdup("hello");
+	lst1.content_size = ft_strlen("hello");
+	lst2.next = &lst3;
+	lst2.content = (void *)ft_strdup("world");
+	lst2.content_size = ft_strlen("world");
+	lst3.next = &lst4;
+	lst3.content = (void *)ft_strdup("guys!");
+	lst3.content_size = ft_strlen("guys!");
+	lst4.next = NULL;
+	lst4.content = (void *)ft_strdup("YoyoYo!");
+	lst4.content_size = ft_strlen("YoyoYo!");
+
+	print = &lst1;
+	printf("BEFORE ft_lstmap\n");
+	while (print)
+	{
+		printf("%s ", (char *)print->content);
+		print = print->next;
+	}
+	printf("\n");
+
+	new = ft_lstmap(&lst1, ft_lstmod);
+	print = new;
+	printf("AFTER ft_lstmap\n");
+	while (print)
+	{
+		printf("%s ", (char *)print->content);
+		print = print->next;
+	}
+	printf("\n");
+
+	while (new)
+	{
+		print = new->next;
+		free(new->content);
+		free(new);
+		new = print;
+	}
+
+	free(lst1.content);
+	free(lst2.content);
+	free(lst3.content);
+	free(lst4.content);
+}
+
 /*
 ** Bonus (my)
 */
@@ -186,9 +241,44 @@ int		main(void)
 // 	temp = (t_list **)malloc(sizeof(t_list *));
 // 	temp[0] = NULL; // add lst in front of the NULL
 // 	ft_lstaddb(temp, &lst);
+// 	free(temp);
 // 	temp = NULL;
 // 	ft_lstaddb(temp, &lst);
 // 	printf("\nft_lstaddb OK\n\n");
+// }
+
+// void	test_ft_lstdestroy()
+// {
+// 	/*
+// 	** my ft_lstdestroy
+// 	*/
+
+// 	t_list	*lst1;
+// 	t_list	*lst2;
+// 	t_list	**temp;
+
+// 	printf("\n>>>>> ft_lstdestroy <<<<<\n\n");
+// 	temp = (t_list **)malloc(sizeof(t_list *));
+// 	temp[0] = NULL;
+// 	ft_lstdestroy(temp);
+// 	free(temp);
+// 	temp = NULL;
+// 	ft_lstdestroy(temp);
+// 	lst1 = (t_list *)malloc(sizeof(t_list));
+// 	lst1->content = malloc(1);
+// 	lst2 = (t_list *)malloc(sizeof(t_list));
+// 	lst2->content = malloc(1);
+// 	lst1->next = lst2;
+// 	lst2->next = NULL;
+// 	ft_lstdestroy(&lst1);
+// 	// loop
+// 	// lst1 = (t_list *)malloc(sizeof(t_list));
+// 	// lst1->content = malloc(1);
+// 	// lst1->next = lst2;
+// 	// lst2->next = lst1;
+// 	// ft_lstdestroy(&lst1);
+// 	// loop end
+// 	printf("\nft_lstdestroy OK\n\n");
 // }
 
 // void	test_ft_atoi_base()

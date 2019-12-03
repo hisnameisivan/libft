@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: waddam <waddam@student.42.fr>              +#+  +:+       +#+         #
+#    By: waddam <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/05 23:39:26 by waddam            #+#    #+#              #
-#    Updated: 2019/11/20 23:54:32 by waddam           ###   ########.fr        #
+#    Updated: 2019/12/04 00:07:21 by waddam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,10 @@ SRC = ft_atoi.c\
 	  ft_lstaddb.c\
 	  ft_lstdel.c\
 	  ft_lstdelone.c\
+	  ft_lstdestroy.c\
 	  ft_lstiter.c\
+	  ft_lstmap.c\
+	  ft_lstmod.c\
 	  ft_lstnew.c\
 	  ft_lstprint.c\
 	  ft_memalloc.c\
