@@ -6,7 +6,7 @@
 /*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/23 19:29:10 by waddam            #+#    #+#             */
-/*   Updated: 2019/12/03 00:07:22 by waddam           ###   ########.fr       */
+/*   Updated: 2019/12/03 23:57:04 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ t_list	*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem))
 		temp = NULL;
 		while (lst)
 		{
-			new = f(lst);
+			if (!(new = f(lst)))
+				ft_lstdestroy(&begin);
 			if (temp)
 				temp->next = new;
 			else
