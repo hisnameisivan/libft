@@ -19,7 +19,7 @@
 // void	test_ft_lstadd();
 // void	test_ft_lstdel();
 // void	test_ft_lstmap();
-void	test_ft_lstnew();
+// void	test_ft_lstnew();
 // void	test_ft_strjoin();
 
 /*
@@ -29,6 +29,7 @@ void	test_ft_lstnew();
 // void	test_ft_atoi_base();
 // void	test_ft_lstaddb();
 // void	test_ft_lstdestroy();
+void	test_ft_memjoin();
 
 /*
 ** Del
@@ -62,7 +63,8 @@ int		main(void)
 	// test_ft_atoi_base();
 	// test_ft_lstaddb();
 	// test_ft_lstdestroy();
-	test_ft_lstnew();
+	// test_ft_lstnew();
+	test_ft_memjoin();
 
 
 	/*
@@ -263,24 +265,24 @@ int		main(void)
 // 	free(lst4.content);
 // }
 
-void	test_ft_lstnew()
-{
-	/*
-	** my ft_lstnew
-	*/
+// void	test_ft_lstnew()
+// {
+// 	/*
+// 	** my ft_lstnew
+// 	*/
 
-	char *data = "hello, i'm a data";
-	t_list *temp;
+// 	char *data = "hello, i'm a data";
+// 	t_list *temp;
 
-	printf("\n>>>>> ft_lstnew <<<<<\n\n");
-	temp = ft_lstnew(data, strlen(data) + 1);
-	if (!strcmp(data, temp->content))
-		printf("\nft_lstnew OK\n\n");
-	else
-		printf("\nft_lstnew FAILED\n\n");
-	free(temp->content);
-	free(temp);
-}
+// 	printf("\n>>>>> ft_lstnew <<<<<\n\n");
+// 	temp = ft_lstnew(data, strlen(data) + 1);
+// 	if (!strcmp(data, temp->content))
+// 		printf("\nft_lstnew OK\n\n");
+// 	else
+// 		printf("\nft_lstnew FAILED\n\n");
+// 	free(temp->content);
+// 	free(temp);
+// }
 
 /*
 ** Bonus (my)
@@ -389,6 +391,20 @@ void	test_ft_lstnew()
 // 		);
 // 	printf("NULL\n%d\n", ft_atoi_base(NULL, 10)); // no segmentation fault
 // }
+
+void	test_ft_memjoin()
+{
+	/*
+	** my ft_memjoin
+	*/
+
+	printf("\n>>>>> ft_memjoin <<<<<\n\n");
+	printf("strcmp(ft_memjoin(\"\", \"\", 0, 0), \"\")) = %d\n", strcmp(ft_memjoin("", "", 0, 0), ""));
+	printf("strcmp(ft_memjoin(NULL, NULL, 0, 0), \"\")) = %d\n", strcmp(ft_memjoin(NULL, NULL, 0, 0), ""));
+	printf("strcmp(ft_memjoin(NULL, NULL, 1, 0), \"\")) = %d\n", strcmp(ft_memjoin(NULL, NULL, 1, 0), ""));
+	printf("strcmp(ft_memjoin(NULL, NULL, 1, -1), \"\")) = %d\n", strcmp(ft_memjoin(NULL, NULL, 1, -1), ""));
+	printf("strcmp(ft_memjoin(\"null\", NULL, 1, -1), \"n\")) = %d\n", strcmp(ft_memjoin("null", NULL, 1, -1), "n"));
+}
 
 /*
 ** Del
