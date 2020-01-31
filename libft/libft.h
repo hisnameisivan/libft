@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:37:31 by waddam            #+#    #+#             */
-/*   Updated: 2019/12/04 00:00:41 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/01 00:38:40 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,5 +104,6 @@ void				ft_swapchar(char **s1, char **s2);
 int					ft_atoi_base(const char *str, int base);
 int					ft_islower(char c);
 int					ft_isupper(char c);
+void				*ft_memjoin(void *s1, void *s2, size_t size1, size_t size2);
 
 #endif
