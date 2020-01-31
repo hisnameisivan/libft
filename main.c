@@ -7,8 +7,10 @@
 
 // void	test_ft_atoi();
 // void	test_ft_itoa();
-// void	test_ft_isupper();	// TODO
 // void	test_ft_islower();	// TODO
+// void	test_ft_isupper();	// TODO
+// void	test_ft_strlcat();
+
 
 /*
 ** Bonus (subject)
@@ -16,7 +18,9 @@
 
 // void	test_ft_lstadd();
 // void	test_ft_lstdel();
-void	test_ft_lstmap();
+// void	test_ft_lstmap();
+void	test_ft_lstnew();
+// void	test_ft_strjoin();
 
 /*
 ** Bonus (my)
@@ -40,6 +44,7 @@ int		main(void)
 
 	// test_ft_atoi();
 	// test_ft_itoa();
+	// test_ft_strlcat();
 
 	/*
 	** Bonus (subject)
@@ -47,7 +52,8 @@ int		main(void)
 
 	// test_ft_lstadd();
 	// test_ft_lstdel();
-	test_ft_lstmap();
+	// test_ft_lstmap();
+	// test_ft_strjoin();
 
 	/*
 	** Bonus (my)
@@ -56,6 +62,8 @@ int		main(void)
 	// test_ft_atoi_base();
 	// test_ft_lstaddb();
 	// test_ft_lstdestroy();
+	test_ft_lstnew();
+
 
 	/*
 	** Del
@@ -64,6 +72,10 @@ int		main(void)
 	// test_ft_atoill();
 	return (0);
 }
+
+	/*
+	** Basic
+	*/
 
 // void	test_ft_atoi()
 // {
@@ -122,6 +134,33 @@ int		main(void)
 // 		);
 // }
 
+// void	test_ft_strlcat()
+// {
+// 	/*
+// 	** my ft_strlcat
+// 	*/
+
+// 	unsigned int	std_ret;
+// 	unsigned int	ft_ret;
+
+// 	printf("\n>>>>> ft_strlcat <<<<<\n\n");
+// 	std_ret = (unsigned int)strlcat(strdup("abc"), "ccc", 6);
+// 	ft_ret = (unsigned int)ft_strlcat(strdup("abc"), "ccc", 6);
+// 	printf("std_ret = %d\n", std_ret);
+// 	printf("ft_ret = %d\n", ft_ret);
+// }
+
+// void	test_ft_strjoin()
+// {
+// 	/*
+// 	** my ft_strjoin
+// 	*/
+
+// 	printf("\n>>>>> ft_strjoin <<<<<\n\n");
+// 	printf("strcmp(ft_strjoin(\"\", \"\"), \"\")) = %d\n", strcmp(ft_strjoin("", ""), ""));
+// }
+
+
 /*
 ** Bonus (subject)
 */
@@ -168,60 +207,79 @@ int		main(void)
 // 	printf("\nft_lstdel OK\n\n");
 // }
 
-void	test_ft_lstmap()
+// void	test_ft_lstmap()
+// {
+// 	t_list	lst1;
+// 	t_list	lst2;
+// 	t_list	lst3;
+// 	t_list	lst4;
+
+// 	t_list	*new;
+// 	t_list	*print;
+
+// 	lst1.next = &lst2;
+// 	lst1.content = (void *)ft_strdup("hello");
+// 	lst1.content_size = ft_strlen("hello");
+// 	lst2.next = &lst3;
+// 	lst2.content = (void *)ft_strdup("world");
+// 	lst2.content_size = ft_strlen("world");
+// 	lst3.next = &lst4;
+// 	lst3.content = (void *)ft_strdup("guys!");
+// 	lst3.content_size = ft_strlen("guys!");
+// 	lst4.next = NULL;
+// 	lst4.content = (void *)ft_strdup("YoyoYo!");
+// 	lst4.content_size = ft_strlen("YoyoYo!");
+
+// 	print = &lst1;
+// 	printf("BEFORE ft_lstmap\n");
+// 	while (print)
+// 	{
+// 		printf("%s ", (char *)print->content);
+// 		print = print->next;
+// 	}
+// 	printf("\n");
+
+// 	new = ft_lstmap(&lst1, ft_lstmod);
+// 	print = new;
+// 	printf("AFTER ft_lstmap\n");
+// 	while (print)
+// 	{
+// 		printf("%s ", (char *)print->content);
+// 		print = print->next;
+// 	}
+// 	printf("\n");
+
+// 	while (new)
+// 	{
+// 		print = new->next;
+// 		free(new->content);
+// 		free(new);
+// 		new = print;
+// 	}
+
+// 	free(lst1.content);
+// 	free(lst2.content);
+// 	free(lst3.content);
+// 	free(lst4.content);
+// }
+
+void	test_ft_lstnew()
 {
-	t_list	lst1;
-	t_list	lst2;
-	t_list	lst3;
-	t_list	lst4;
+	/*
+	** my ft_lstnew
+	*/
 
-	t_list	*new;
-	t_list	*print;
+	char *data = "hello, i'm a data";
+	t_list *temp;
 
-	lst1.next = &lst2;
-	lst1.content = (void *)ft_strdup("hello");
-	lst1.content_size = ft_strlen("hello");
-	lst2.next = &lst3;
-	lst2.content = (void *)ft_strdup("world");
-	lst2.content_size = ft_strlen("world");
-	lst3.next = &lst4;
-	lst3.content = (void *)ft_strdup("guys!");
-	lst3.content_size = ft_strlen("guys!");
-	lst4.next = NULL;
-	lst4.content = (void *)ft_strdup("YoyoYo!");
-	lst4.content_size = ft_strlen("YoyoYo!");
-
-	print = &lst1;
-	printf("BEFORE ft_lstmap\n");
-	while (print)
-	{
-		printf("%s ", (char *)print->content);
-		print = print->next;
-	}
-	printf("\n");
-
-	new = ft_lstmap(&lst1, ft_lstmod);
-	print = new;
-	printf("AFTER ft_lstmap\n");
-	while (print)
-	{
-		printf("%s ", (char *)print->content);
-		print = print->next;
-	}
-	printf("\n");
-
-	while (new)
-	{
-		print = new->next;
-		free(new->content);
-		free(new);
-		new = print;
-	}
-
-	free(lst1.content);
-	free(lst2.content);
-	free(lst3.content);
-	free(lst4.content);
+	printf("\n>>>>> ft_lstnew <<<<<\n\n");
+	temp = ft_lstnew(data, strlen(data) + 1);
+	if (!strcmp(data, temp->content))
+		printf("\nft_lstnew OK\n\n");
+	else
+		printf("\nft_lstnew FAILED\n\n");
+	free(temp->content);
+	free(temp);
 }
 
 /*
