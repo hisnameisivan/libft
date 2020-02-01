@@ -6,7 +6,7 @@
 #    By: waddam <waddam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/05 23:39:26 by waddam            #+#    #+#              #
-#    Updated: 2020/02/01 00:37:04 by waddam           ###   ########.fr        #
+#    Updated: 2020/02/02 00:48:45 by waddam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -41,6 +41,7 @@ SRC = ft_atoi.c\
 	  ft_memjoin.c\
 	  ft_memmove.c\
 	  ft_memset.c\
+	  ft_memswap.c\
 	  ft_putchar_fd.c\
 	  ft_putchar.c\
 	  ft_putendl_fd.c\
