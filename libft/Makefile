@@ -6,7 +6,7 @@
 #    By: waddam <waddam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/05 23:39:26 by waddam            #+#    #+#              #
-#    Updated: 2020/02/02 00:48:45 by waddam           ###   ########.fr        #
+#    Updated: 2020/02/02 02:19:55 by waddam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,6 +14,7 @@ NAME = libft.a
 SRC = ft_atoi.c\
 	  ft_atoi_base.c\
 	  ft_bzero.c\
+	  ft_contentdel.c\
 	  ft_isalnum.c\
 	  ft_isalpha.c\
 	  ft_isascii.c\
