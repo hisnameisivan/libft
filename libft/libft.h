@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:37:31 by waddam            #+#    #+#             */
-/*   Updated: 2020/02/01 00:38:40 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/02 02:01:05 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,8 @@
 # include <stdlib.h>
 # include <string.h>
 
-# define FT_LONG_MAX 9223372036854775807ull
+# define FT_ULONG_MAX	(~0ull)
+# define FT_LONG_MAX	((long)(FT_ULONG_MAX >> 1))
 
 typedef struct		s_list
 {
@@ -105,5 +106,6 @@ int					ft_atoi_base(const char *str, int base);
 int					ft_islower(char c);
 int					ft_isupper(char c);
 void				*ft_memjoin(void *s1, void *s2, size_t size1, size_t size2);
+void				ft_memswap(void *s1, void *s2, size_t size);
 
 #endif
