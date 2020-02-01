@@ -3,12 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_swapchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/21 18:21:59 by waddam            #+#    #+#             */
-/*   Updated: 2018/12/21 18:24:07 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/02 00:21:31 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Swaps strings by swapping pointers
+*/
 
 void	ft_swapchar(char **s1, char **s2)
 {
