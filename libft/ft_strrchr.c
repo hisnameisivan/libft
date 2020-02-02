@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/04 12:10:24 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/23 01:28:20 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/03 00:07:14 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,22 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*temp;
-	size_t	len;
+	char	*temp_s;
+	char	*result;
 
-	temp = (char *)s;
-	len = 0;
-	while (*temp)
+	temp_s = (char *)s;
+	result = NULL;
+	if (c == 0)
 	{
-		len++;
-		temp++;
+		while (*temp_s)
+			temp_s++;
+		return (result = temp_s);
 	}
-	if (*temp == c)
-		return (temp);
-	temp--;
-	while (len > 0)
+	while (*temp_s)
 	{
-		if (*temp == c)
-			return (temp);
-		len--;
-		temp--;
+		if (*temp_s == c)
+			result = temp_s;
+		temp_s++;
 	}
-	return (NULL);
+	return (result);
 }

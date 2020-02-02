@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/01 20:44:22 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/23 00:51:34 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/02 23:39:57 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,15 @@
 char	*ft_strncpy(char *dst, const char *src, size_t len)
 {
 	size_t	i;
-	size_t	srclen;
+	size_t	src_len;
 
 	i = 0;
-	srclen = 0;
-	while (*(src + srclen))
-		srclen++;
+	src_len = 0;
+	while (*(src + src_len))
+		src_len++;
 	while (i < len)
 	{
-		dst[i] = (i < srclen ? src[i] : '\0');
+		dst[i] = (i < src_len ? src[i] : '\0');
 		i++;
 	}
 	return (dst);

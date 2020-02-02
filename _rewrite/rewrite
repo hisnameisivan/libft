@@ -1,24 +1,23 @@
-split переписать на скорость (убрать ft_delimiter, положить что-нибудь в j)
-написать memswap строки инты и проч
-Makefile OBJ = $(SRCS:%.c=%.o) генерация списко файлов .o из .c. Добавить невошедшее
-Проверить .h на дом функции
-Добить atoi
 Valgrind
-все что со звездой протект
-Makefile Серега
-strequ
-Strlcpy (strlen в цикле)
-strncmp (strlen в цикле)
-Strtrim пересмотреть
-Strrchr сделать один проход, запоминать последнее
 Lstmap x2
 Fast gnl
 Циклы с size_t -1: strjoin
 		   memjoin
-strnew + memcpy 
-itoa min int
+strnew + memcpy
 
 +в strnew (memalloc) поменять местами (size + 1) temp =
 +Подправить lstnew (перепроверить (void *)malloc(sizeof(content))
 +Strjoin (возможно другие парные) один из параметров может быть NULL
 +memjoin
++split переписать на скорость (убрать ft_delimiter, положить что-нибудь в j)
++написать memswap строки инты и проч
++Makefile OBJ = $(SRCS:%.c=%.o) генерация списко файлов .o из .c. Добавить +невошедшее
++Проверить .h на дом функции
++Добить atoi
++все что со звездой протект
++strequ
++Strlcpy (strlen в цикле)
++strncmp (strlen в цикле)
++Strtrim пересмотреть
++Strrchr сделать один проход, запоминать последнее
+itoa min int

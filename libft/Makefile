@@ -6,7 +6,7 @@
 #    By: waddam <waddam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/05 23:39:26 by waddam            #+#    #+#              #
-#    Updated: 2020/02/02 02:19:55 by waddam           ###   ########.fr        #
+#    Updated: 2020/02/02 23:29:04 by waddam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -80,14 +80,19 @@ SRC = ft_atoi.c\
 	  ft_tolower.c\
 	  ft_toupper.c
 
+OBJ = $(SRC:%.c=%.o)
+
 all: $(NAME)
 
-$(NAME):
-	gcc -Wall -Wextra -Werror -O2 -c $(SRC)
-	ar rc $(NAME) *.o
+$(OBJ): %.o : %.c
+	gcc -Wall -Wextra -Werror -O2 -c $< -o $@
+
+$(NAME): $(OBJ)
+	ar rc $(NAME) $?
+	/bin/rm -f $(OBJ)  # del
 
 clean:
-	/bin/rm -f *.o
+	/bin/rm -f $(OBJ)
 
 fclean: clean
 	/bin/rm -f $(NAME)
