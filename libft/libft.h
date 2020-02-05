@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:37:31 by waddam            #+#    #+#             */
-/*   Updated: 2020/02/05 23:39:11 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/06 01:10:19 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -95,18 +95,20 @@ t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 ** Bonus part two
 */
 
-void				ft_lstprint(t_list *lst);
-void				ft_lstaddb(t_list **alst, t_list *new);
-size_t				ft_lstlen(t_list *lst);
-void				ft_lstdestroy(t_list **alst);
-void				ft_contentdel(void *content, size_t size);
-t_list				*ft_lstmod(t_list *elem);
-void				ft_swapchar(char **s1, char **s2);
 int					ft_atoi_base(const char *str, int base);
+void				ft_contentdel(void *content, size_t size);
 int					ft_islower(char c);
 int					ft_isupper(char c);
-void				*ft_memjoin(const void *s1, const void *s2, size_t size1, size_t size2);
+void				ft_lstaddb(t_list **alst, t_list *new);
+int					ft_lstccldetect(const t_list *lst);
+void				ft_lstdestroy(t_list **alst);
+size_t				ft_lstlen(t_list *lst);
+t_list				*ft_lstmod(t_list *elem);
+void				ft_lstprint(t_list *lst);
+void				*ft_memjoin(const void *s1, const void *s2,
+									size_t size1, size_t size2);
 void				ft_memswap(void *s1, void *s2, size_t size);
 int					ft_strpos(const char *str, char c);
+void				ft_swapchar(char **s1, char **s2);
 
 #endif
