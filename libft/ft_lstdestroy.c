@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstdestroy.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waddam <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 21:15:10 by waddam            #+#    #+#             */
-/*   Updated: 2019/12/03 23:56:08 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/05 22:08:23 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,5 @@ void	ft_lstdestroy(t_list **alst)
 			free(temp1);
 			temp1 = temp2;
 		}
-		temp1 = NULL;
 	}
 }
