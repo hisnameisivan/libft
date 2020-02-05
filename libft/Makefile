@@ -6,7 +6,7 @@
 #    By: waddam <waddam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/05 23:39:26 by waddam            #+#    #+#              #
-#    Updated: 2020/02/02 23:29:04 by waddam           ###   ########.fr        #
+#    Updated: 2020/02/05 23:39:53 by waddam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -72,6 +72,7 @@ SRC = ft_atoi.c\
 	  ft_strnequ.c\
 	  ft_strnew.c\
 	  ft_strnstr.c\
+	  ft_strpos.c\
 	  ft_strrchr.c\
 	  ft_strsplit.c\
 	  ft_strstr.c\
