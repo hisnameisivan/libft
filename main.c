@@ -28,9 +28,11 @@
 
 // void	test_ft_atoi_base();
 // void	test_ft_lstaddb();
-// void	test_ft_lstdestroy();
+void	test_ft_lstdestroy();
 void	test_ft_memjoin();
 void	test_ft_memswap();
+void	test_ft_strpos();
+
 
 /*
 ** Del
@@ -66,7 +68,8 @@ int		main(void)
 	// test_ft_lstdestroy();
 	// test_ft_lstnew();
 	// test_ft_memjoin();
-	test_ft_memswap();
+	// test_ft_memswap();
+	test_ft_strpos();
 
 
 	/*
@@ -480,6 +483,19 @@ void	test_ft_memswap()
 		i++;
 	}
 	printf("\n");
+}
+
+void	test_ft_strpos()
+{
+	/*
+	** my ft_strpos
+	*/
+
+	printf("\n>>>>> ft_strpos <<<<<\n\n");
+	printf("ft_strpos(\"hello\", 'c') = %d\n", ft_strpos("hello", 'c'));
+	printf("ft_strpos(\"hello_world\", 'o') = %d\n", ft_strpos("hello_world", 'o'));
+	printf("ft_strpos(\"NULL\", 'N') = %d\n", ft_strpos("NULL", 'N'));
+	printf("NULL %d\n", ft_strpos(NULL, 'c'));
 }
 
 /*
