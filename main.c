@@ -5,34 +5,33 @@
 ** Basic
 */
 
-// void	test_ft_atoi();
-// void	test_ft_itoa();
+void	test_ft_atoi();
+void	test_ft_itoa();
 // void	test_ft_islower();	// TODO
 // void	test_ft_isupper();	// TODO
-// void	test_ft_strlcat();
-
+void	test_ft_strlcat();
 
 /*
 ** Bonus (subject)
 */
 
-// void	test_ft_lstadd();
-// void	test_ft_lstdel();
-// void	test_ft_lstmap();
-// void	test_ft_lstnew();
-// void	test_ft_strjoin();
+void	test_ft_lstadd();
+void	test_ft_lstdel();
+void	test_ft_lstmap();
+void	test_ft_lstnew();
+void	test_ft_strjoin();
 
 /*
 ** Bonus (my)
 */
 
-// void	test_ft_atoi_base();
-// void	test_ft_lstaddb();
+void	test_ft_atoi_base();
+void	test_ft_lstaddb();
 void	test_ft_lstdestroy();
 void	test_ft_memjoin();
 void	test_ft_memswap();
 void	test_ft_strpos();
-
+void	test_ft_lstccldetect();
 
 /*
 ** Del
@@ -46,31 +45,31 @@ int		main(void)
 	** Basic
 	*/
 
-	// test_ft_atoi();
-	// test_ft_itoa();
-	// test_ft_strlcat();
+	test_ft_atoi();
+	test_ft_itoa();
+	test_ft_strlcat();
 
 	/*
 	** Bonus (subject)
 	*/
 
-	// test_ft_lstadd();
-	// test_ft_lstdel();
-	// test_ft_lstmap();
-	// test_ft_strjoin();
+	test_ft_lstadd();
+	test_ft_lstdel();
+	test_ft_lstmap();
+	test_ft_strjoin();
 
 	/*
 	** Bonus (my)
 	*/
 
-	// test_ft_atoi_base();
-	// test_ft_lstaddb();
-	// test_ft_lstdestroy();
-	// test_ft_lstnew();
-	// test_ft_memjoin();
-	// test_ft_memswap();
+	test_ft_atoi_base();
+	test_ft_lstaddb();
+	test_ft_lstdestroy();
+	test_ft_lstnew();
+	test_ft_memjoin();
+	test_ft_memswap();
 	test_ft_strpos();
-
+	test_ft_lstccldetect();
 
 	/*
 	** Del
@@ -187,7 +186,7 @@ void	test_ft_lstadd()
 	temp = NULL;
 	ft_lstadd(temp, &lst);
 	free(temp);
-	printf("\nft_lstadd OK\n\n");
+	printf("\nft_lstadd OK\n");
 }
 
 void	test_ft_lstdel()
@@ -210,11 +209,15 @@ void	test_ft_lstdel()
 	ft_lstprint(begin);
 	ft_lstdel(&begin, &ft_contentdel);
 	free(temp);
-	printf("\nft_lstdel OK\n\n");
+	printf("\nft_lstdel OK\n");
 }
 
 void	test_ft_lstmap()
 {
+	/*
+	** my ft_lstmap
+	*/
+
 	t_list	lst1;
 	t_list	lst2;
 	t_list	lst3;
@@ -223,6 +226,7 @@ void	test_ft_lstmap()
 	t_list	*new;
 	t_list	*print;
 
+	printf("\n>>>>> ft_lstmap <<<<<\n\n");
 	lst1.next = &lst2;
 	lst1.content = (void *)ft_strdup("hello");
 	lst1.content_size = ft_strlen("hello");
@@ -267,6 +271,7 @@ void	test_ft_lstmap()
 	free(lst2.content);
 	free(lst3.content);
 	free(lst4.content);
+	printf("\nft_lstmap OK\n");
 }
 
 void	test_ft_lstnew()
@@ -281,7 +286,7 @@ void	test_ft_lstnew()
 	printf("\n>>>>> ft_lstnew <<<<<\n\n");
 	temp = ft_lstnew(data, strlen(data) + 1);
 	if (!strcmp(data, temp->content))
-		printf("\nft_lstnew OK\n\n");
+		printf("\nft_lstnew OK\n");
 	else
 		printf("\nft_lstnew FAILED\n\n");
 	free(temp->content);
@@ -308,7 +313,7 @@ void	test_ft_lstaddb()
 	free(temp);
 	temp = NULL;
 	ft_lstaddb(temp, &lst);
-	printf("\nft_lstaddb OK\n\n");
+	printf("\nft_lstaddb OK\n");
 }
 
 void	test_ft_lstdestroy()
@@ -342,7 +347,7 @@ void	test_ft_lstdestroy()
 	// lst2->next = lst1;
 	// ft_lstdestroy(&lst1);
 	// loop end
-	printf("\nft_lstdestroy OK\n\n");
+	printf("\nft_lstdestroy OK\n");
 }
 
 void	test_ft_atoi_base()
@@ -496,6 +501,47 @@ void	test_ft_strpos()
 	printf("ft_strpos(\"hello_world\", 'o') = %d\n", ft_strpos("hello_world", 'o'));
 	printf("ft_strpos(\"NULL\", 'N') = %d\n", ft_strpos("NULL", 'N'));
 	printf("NULL %d\n", ft_strpos(NULL, 'c'));
+}
+
+void	test_ft_lstccldetect()
+{
+	/*
+	** my ft_lstccldetect
+	*/
+
+	t_list	l1;
+	t_list	l2;
+	t_list	l3;
+	t_list	l4;
+
+	printf("\n>>>>> ft_lstccldetect <<<<<\n\n");
+	l1.content = "first";
+	l1.next = NULL;
+	printf("l1 no cycle: %d\n", ft_lstccldetect(&l1));
+	l1.next = &l1;
+	printf("l1 have selfcycle: %d\n", ft_lstccldetect(&l1));
+	l1.next = &l2;
+	l2.next = NULL;
+	printf("l1->l2 no cycle: %d\n", ft_lstccldetect(&l1));
+	l2.next = &l1;
+	printf("l1->l2->l1 have cycle: %d\n", ft_lstccldetect(&l1));
+	l2.next = &l2;
+	printf("l1->l2->l2 have cycle: %d\n", ft_lstccldetect(&l1));
+	l2.next = &l3;
+	l3.next = NULL;
+	printf("l1->l2->l3 no cycle: %d\n", ft_lstccldetect(&l1));
+	l3.next = &l3;
+	printf("l1->l2->l3->l3 have cycle: %d\n", ft_lstccldetect(&l1));
+	l3.next = &l2;
+	printf("l1->l2->l3->l2 have cycle: %d\n", ft_lstccldetect(&l1));
+	l3.next = &l1;
+	printf("l1->l2->l3->l1 have cycle: %d\n", ft_lstccldetect(&l1));
+	l3.next = &l4;
+	l4.next = NULL;
+	printf("l1->l2->l3->l4 no cycle: %d\n", ft_lstccldetect(&l1));
+	l4.next = &l1;
+	printf("l1->l2->l3->l1-> have cycle: %d\n", ft_lstccldetect(&l1));
+	printf("\nft_lstccldetect OK\n");
 }
 
 /*
