@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:37:31 by waddam            #+#    #+#             */
-/*   Updated: 2020/02/02 02:01:05 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/05 23:39:11 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,7 +105,8 @@ void				ft_swapchar(char **s1, char **s2);
 int					ft_atoi_base(const char *str, int base);
 int					ft_islower(char c);
 int					ft_isupper(char c);
-void				*ft_memjoin(void *s1, void *s2, size_t size1, size_t size2);
+void				*ft_memjoin(const void *s1, const void *s2, size_t size1, size_t size2);
 void				ft_memswap(void *s1, void *s2, size_t size);
+int					ft_strpos(const char *str, char c);
 
 #endif
