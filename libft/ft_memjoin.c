@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/01 00:26:30 by waddam            #+#    #+#             */
-/*   Updated: 2020/02/01 02:16:40 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/05 22:13:50 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 #include "libft.h"
 
-void	*ft_memjoin(void *s1, void *s2, size_t size1, size_t size2)
+void	*ft_memjoin(void const *s1, const void *s2, size_t size1, size_t size2)
 {
 	unsigned char	*result;
 	unsigned char	*temp_s1;
