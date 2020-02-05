@@ -6,7 +6,7 @@
 #    By: waddam <waddam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/05 23:39:26 by waddam            #+#    #+#              #
-#    Updated: 2020/02/05 23:39:53 by waddam           ###   ########.fr        #
+#    Updated: 2020/02/06 01:13:27 by waddam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,10 +25,12 @@ SRC = ft_atoi.c\
 	  ft_itoa.c\
 	  ft_lstadd.c\
 	  ft_lstaddb.c\
+	  ft_lstccldetect.c\
 	  ft_lstdel.c\
 	  ft_lstdelone.c\
 	  ft_lstdestroy.c\
 	  ft_lstiter.c\
+	  ft_lstlen.c\
 	  ft_lstmap.c\
 	  ft_lstmod.c\
 	  ft_lstnew.c\
@@ -78,6 +80,7 @@ SRC = ft_atoi.c\
 	  ft_strstr.c\
 	  ft_strsub.c\
 	  ft_strtrim.c\
+	  ft_swapchar.c\
 	  ft_tolower.c\
 	  ft_toupper.c
 
