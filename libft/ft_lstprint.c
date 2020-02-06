@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/18 22:59:53 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/21 01:19:22 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/06 23:06:30 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,22 @@
 
 #include "libft.h"
 
-void	ft_lstprint(t_list *lst)
+void	ft_lstprint(const t_list *lst)
 {
+	size_t	i;
+	char	*content;
+
 	while (lst)
 	{
-		ft_putendl((char *)lst->content);
+		content = (char *)lst->content;
+		if (content)
+		{
+			i = 0;
+			while (*(content + i))
+				i++;
+			write(1, content, i);
+			write(1, "\n", 1);
+		}
 		lst = lst->next;
 	}
 }
