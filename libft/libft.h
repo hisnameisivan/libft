@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:37:31 by waddam            #+#    #+#             */
-/*   Updated: 2020/02/06 01:10:19 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/06 23:06:50 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,7 +104,7 @@ int					ft_lstccldetect(const t_list *lst);
 void				ft_lstdestroy(t_list **alst);
 size_t				ft_lstlen(t_list *lst);
 t_list				*ft_lstmod(t_list *elem);
-void				ft_lstprint(t_list *lst);
+void				ft_lstprint(const t_list *lst);
 void				*ft_memjoin(const void *s1, const void *s2,
 									size_t size1, size_t size2);
 void				ft_memswap(void *s1, void *s2, size_t size);
