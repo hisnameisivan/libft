@@ -32,6 +32,7 @@ void	test_ft_memjoin();
 void	test_ft_memswap();
 void	test_ft_strpos();
 void	test_ft_lstccldetect();
+void	test_ft_lstprint();
 
 /*
 ** Del
@@ -70,6 +71,7 @@ int		main(void)
 	test_ft_memswap();
 	test_ft_strpos();
 	test_ft_lstccldetect();
+	test_ft_lstprint();
 
 	/*
 	** Del
@@ -542,6 +544,28 @@ void	test_ft_lstccldetect()
 	l4.next = &l1;
 	printf("l1->l2->l3->l1-> have cycle: %d\n", ft_lstccldetect(&l1));
 	printf("\nft_lstccldetect OK\n");
+}
+
+void	test_ft_lstprint()
+{
+	/*
+	** my ft_lstprint
+	*/
+
+	t_list	l1;
+	t_list	l2;
+	t_list	l3;
+
+	printf("\n>>>>> ft_lstprint <<<<<\n\n");
+	l1.content = "hello";
+	l1.next = &l2;
+	l2.content = "world";
+	l2.next = &l3;
+	l3.content = "!!!";
+	l3.next = NULL;
+	ft_lstprint(&l1);
+	ft_lstprint(NULL);
+	printf("\nft_lstprint OK\n");
 }
 
 /*
