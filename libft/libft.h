@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:37:31 by waddam            #+#    #+#             */
-/*   Updated: 2020/02/07 00:19:54 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/11 00:15:41 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,5 +112,6 @@ int					ft_strpos(const char *str, char c);
 void				ft_swapchar(char **s1, char **s2);
 void				**ft_mtrxalloc(int dim1, int dim2, int c,
 												void *set(void *, int, size_t));
+void				ft_mtrxdel(void ***matrix, int i);
 
 #endif
