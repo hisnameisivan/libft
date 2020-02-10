@@ -6,6 +6,7 @@
 */
 
 void	test_ft_atoi();
+void	test_ft_bzero();
 void	test_ft_itoa();
 // void	test_ft_islower();	// TODO
 // void	test_ft_isupper();	// TODO
@@ -33,6 +34,7 @@ void	test_ft_memswap();
 void	test_ft_strpos();
 void	test_ft_lstccldetect();
 void	test_ft_lstprint();
+void	test_ft_mtrxalloc();
 
 /*
 ** Del
@@ -46,32 +48,35 @@ int		main(void)
 	** Basic
 	*/
 
-	test_ft_atoi();
-	test_ft_itoa();
-	test_ft_strlcat();
+	// test_ft_atoi();
+	// test_ft_bzero();
+	// test_ft_itoa();
+	// test_ft_strlcat();
 
 	/*
 	** Bonus (subject)
 	*/
 
-	test_ft_lstadd();
-	test_ft_lstdel();
-	test_ft_lstmap();
-	test_ft_strjoin();
+	// test_ft_lstadd();
+	// test_ft_lstdel();
+	// test_ft_lstmap();
+	// test_ft_strjoin();
 
 	/*
 	** Bonus (my)
 	*/
 
-	test_ft_atoi_base();
-	test_ft_lstaddb();
-	test_ft_lstdestroy();
-	test_ft_lstnew();
-	test_ft_memjoin();
-	test_ft_memswap();
-	test_ft_strpos();
-	test_ft_lstccldetect();
-	test_ft_lstprint();
+	// test_ft_atoi_base();
+	// test_ft_lstaddb();
+	// test_ft_lstdestroy();
+	// test_ft_lstnew();
+	// test_ft_memjoin();
+	// test_ft_memswap();
+	// test_ft_strpos();
+	// test_ft_lstccldetect();
+	// test_ft_lstprint();
+	test_ft_mtrxalloc();
+
 
 	/*
 	** Del
@@ -118,6 +123,27 @@ void	test_ft_atoi()
 		ft_atoi("9223372036854775808"), atoi("9223372036854775808")
 		);
 	// printf("%d\n", atoi(NULL)); // segmentation fault
+}
+
+void	test_ft_bzero()
+{
+	/*
+	** my ft_bzero
+	*/
+
+	char	*s1;
+
+	// while (1)
+	// {
+		printf("\n>>>>> ft_bzero <<<<<\n\n");
+		s1 = (char *)malloc(sizeof(char) * 3);
+		memcpy(s1, "abc", 3);
+		write(2, s1, 3);
+		ft_bzero(s1, 3);
+		write(2, s1, 3);
+		free(s1);
+		printf("\nft_bzero OK\n");
+	// }
 }
 
 void	test_ft_itoa()
@@ -566,6 +592,52 @@ void	test_ft_lstprint()
 	ft_lstprint(&l1);
 	ft_lstprint(NULL);
 	printf("\nft_lstprint OK\n");
+}
+
+void	test_ft_mtrxalloc()
+{
+	/*
+	** my ft_mtrxalloc
+	*/
+
+	int		x = 5;
+	int		y = 4;
+	int		i;
+	int		j;
+
+	char	**matrix_c;
+
+	printf("\n>>>>> ft_mtrxalloc <<<<<\n\n");
+	matrix_c = (char **)ft_mtrxalloc(x, y, 'a', ft_memset);
+	i = 0;
+	while (i < y)
+	{
+		j = 0;
+		while (j < x)
+		{
+			printf("[%d,%d] = %c ", i, j, matrix_c[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+
+	int		**matrix_i;
+
+	matrix_i = (int **)ft_mtrxalloc(x * sizeof(int), y * sizeof(int), -1, ft_memset);
+	i = 0;
+	while (i < y)
+	{
+		j = 0;
+		while (j < x)
+		{
+			printf("[%d,%d] = %d ", i, j, matrix_i[i][j]);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+
 }
 
 /*
