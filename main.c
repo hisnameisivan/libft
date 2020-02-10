@@ -35,6 +35,7 @@ void	test_ft_strpos();
 void	test_ft_lstccldetect();
 void	test_ft_lstprint();
 void	test_ft_mtrxalloc();
+void	test_ft_mtrxdel();
 
 /*
 ** Del
@@ -75,7 +76,9 @@ int		main(void)
 	// test_ft_strpos();
 	// test_ft_lstccldetect();
 	// test_ft_lstprint();
-	test_ft_mtrxalloc();
+	// test_ft_mtrxalloc();
+	test_ft_mtrxdel();
+
 
 
 	/*
@@ -624,7 +627,7 @@ void	test_ft_mtrxalloc()
 
 	int		**matrix_i;
 
-	matrix_i = (int **)ft_mtrxalloc(x * sizeof(int), y * sizeof(int), -1, ft_memset);
+	matrix_i = (int **)ft_mtrxalloc(x * sizeof(int), y * sizeof(int), -1, ft_memset); // NULL
 	i = 0;
 	while (i < y)
 	{
@@ -637,8 +640,26 @@ void	test_ft_mtrxalloc()
 		printf("\n");
 		i++;
 	}
+	printf("\nft_mtrxalloc OK\n");
+}
+
+void	test_ft_mtrxdel()
+{
+	/*
+	** my ft_mtrxalloc
+	*/
+
+	int		x = 5;
+	int		y = 4;
+	char	**matrix_c;
+
+	printf("\n>>>>> ft_mtrxdel <<<<<\n\n");
+	matrix_c = (char **)ft_mtrxalloc(x, y, 'a', ft_memset);
+	ft_mtrxdel((void ***)&matrix_c, y);
+	printf("\nft_mtrxdel OK\n");
 
 }
+
 
 /*
 ** Del
