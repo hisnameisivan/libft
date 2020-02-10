@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 18:23:11 by waddam            #+#    #+#             */
-/*   Updated: 2019/11/13 00:46:21 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/06 23:18:13 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,13 @@ void	ft_bzero(void *s, size_t n)
 	unsigned char	*temp;
 
 	temp = (unsigned char *)s;
-	while (n > 0)
+	while (n > 1)
 	{
 		*temp = 0;
-		temp++;
-		n--;
+		*(temp + 1) = 0;
+		temp += 2;
+		n -= 2;
 	}
+	if (n == 1)
+		*temp = 0;
 }
