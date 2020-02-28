@@ -6,7 +6,7 @@
 #    By: waddam <waddam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/05 23:39:26 by waddam            #+#    #+#              #
-#    Updated: 2020/02/11 00:13:43 by waddam           ###   ########.fr        #
+#    Updated: 2020/02/28 22:03:59 by waddam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -87,20 +87,26 @@ SRC = ft_atoi.c\
 	  ft_toupper.c
 
 OBJ = $(SRC:%.c=%.o)
+DEP = $(SRC:%.c=%.d)
 
 all: $(NAME)
 
-$(OBJ): %.o : %.c
-	gcc -Wall -Wextra -Werror -O2 -c $< -o $@
+%.o : %.c
+	gcc -Wall -Wextra -Werror -O2 -MD -c $< -o $@
+
+include $(wildcard *.d)
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $?
-	/bin/rm -f $(OBJ)  # del
+	#rm -f $(OBJ)  # del
+	#rm -f $(DEP)  # del
 
 clean:
-	/bin/rm -f $(OBJ)
+	rm -f $(OBJ) $(DEP)
 
 fclean: clean
-	/bin/rm -f $(NAME)
+	rm -f $(NAME)
 
 re: fclean all
+
+.PHONY: all clean fclean re
