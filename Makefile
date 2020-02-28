@@ -6,7 +6,7 @@
 #    By: waddam <waddam@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/05 23:39:26 by waddam            #+#    #+#              #
-#    Updated: 2020/02/28 22:03:59 by waddam           ###   ########.fr        #
+#    Updated: 2020/02/29 01:22:17 by waddam           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -94,12 +94,10 @@ all: $(NAME)
 %.o : %.c
 	gcc -Wall -Wextra -Werror -O2 -MD -c $< -o $@
 
-include $(wildcard *.d)
+include $(wildcard $(DEP))
 
 $(NAME): $(OBJ)
 	ar rc $(NAME) $?
-	#rm -f $(OBJ)  # del
-	#rm -f $(DEP)  # del
 
 clean:
 	rm -f $(OBJ) $(DEP)
