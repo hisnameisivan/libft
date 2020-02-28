@@ -6,7 +6,7 @@
 /*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:37:31 by waddam            #+#    #+#             */
-/*   Updated: 2020/02/11 00:15:41 by waddam           ###   ########.fr       */
+/*   Updated: 2020/02/29 01:28:31 by waddam           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,7 @@
 # include <stdlib.h>
 # include <string.h>
 
-# define FT_ULONG_MAX	(~0ull)
-# define FT_LONG_MAX	((long)(FT_ULONG_MAX >> 1))
+# define FT_LONG_MAX	9223372036854775807
 
 typedef struct		s_list
 {
