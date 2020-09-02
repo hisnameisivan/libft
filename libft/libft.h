@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: waddam <waddam@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/23 15:37:31 by waddam            #+#    #+#             */
-/*   Updated: 2020/02/11 00:15:41 by waddam           ###   ########.fr       */
+/*   Updated: 2020/09/02 11:44:56 by ivan             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,5 +113,15 @@ void				ft_swapchar(char **s1, char **s2);
 void				**ft_mtrxalloc(int dim1, int dim2, int c,
 												void *set(void *, int, size_t));
 void				ft_mtrxdel(void ***matrix, int i);
+
+/*
+** GNL
+*/
+
+# define BUFF_SIZE	4096
+# define MAX_FD		128
+# define DELIMITER	'\n'
+
+int					get_next_line(const int fd, char **line);
 
 #endif

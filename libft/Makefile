@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: waddam <waddam@student.42.fr>              +#+  +:+       +#+         #
+#    By: ivan <ivan@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/05 23:39:26 by waddam            #+#    #+#              #
-#    Updated: 2020/03/01 00:21:37 by waddam           ###   ########.fr        #
+#    Updated: 2020/09/02 11:42:50 by ivan             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -84,7 +84,8 @@ SRC = ft_atoi.c\
 	  ft_strtrim.c\
 	  ft_swapchar.c\
 	  ft_tolower.c\
-	  ft_toupper.c
+	  ft_toupper.c\
+	  get_next_line.c
 
 OBJ = $(SRC:%.c=%.o)
 DEP = $(SRC:%.c=%.d)
@@ -92,7 +93,7 @@ DEP = $(SRC:%.c=%.d)
 all: $(NAME)
 
 %.o : %.c
-	gcc -Wall -Wextra -Werror -O2 -MD -c $< -o $@
+	gcc -Wall -Wextra -Werror -MD -c $< -o $@
 
 include $(wildcard $(DEP))
 
